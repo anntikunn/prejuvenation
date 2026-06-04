@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prejuvenation | プレジュビネーション - 未然若返り | Next-Tech-Infrastructures</title>
-    <meta name="description" content="プレジュビネーション（未然若返り）の最新研究、セノリティクス、ミトコンドリア・ブースト、細胞リプログラミングに関する情報を発信しています。老化を未然に防ぐ次世代バイオメディカル・インフラ。">
+    <title>Prejuvenation.jp | 20代・30代のための最先端・若化トレンドメディア</title>
+    <meta name="description" content="20代〜30代のための『最先端・若化（プレジュビネーション）トレンドメディア』。PDRN、スキンサイクリング、エクソソーム、インナーケアなど、今まさにバズっている「早めのエイジングケア」の最新情報を発信。">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         navy: {
-                            900: '#0a0f1e',
-                            950: '#050a14',
+                            900: '#070913',
+                            950: '#03040a',
                         },
-                        silver: {
-                            DEFAULT: '#e2e8f0',
-                            bright: '#f8fafc',
+                        neon: {
+                            blue: '#00f0ff',
+                            pink: '#ff007f',
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Noto Sans JP', 'sans-serif'],
                         display: ['Outfit', 'sans-serif'],
                     }
                 }
@@ -31,204 +32,455 @@
         }
     </script>
     <style>
-        .hero-bg {
-            background: linear-gradient(rgba(10, 15, 30, 0.8), rgba(10, 15, 30, 0.95)), url('hero.png');
-            background-size: cover;
-            background-position: center;
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #05070f;
+            color: #e2e8f0;
+            overflow-x: hidden;
         }
-        .glossary-card {
-            border-left: 2px solid rgba(59, 130, 246, 0.5);
+
+        /* 背景のネオン球体グラデーション */
+        .bg-glow-blue {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, rgba(0, 240, 255, 0) 70%);
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-glow-pink {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 0, 127, 0.06) 0%, rgba(255, 0, 127, 0) 70%);
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* グラスモルフィズムカード */
+        .glass-card {
+            background: rgba(10, 15, 30, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1.25rem;
+            transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+        }
+
+        /* トレンドグリッド用のホバー発光（ブルー） */
+        .glow-hover-blue:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 240, 255, 0.6);
+            box-shadow: 0 15px 30px -10px rgba(0, 240, 255, 0.3),
+                        0 0 15px rgba(0, 240, 255, 0.4);
+        }
+
+        /* トレンドグリッド用のホバー発光（ピンク） */
+        .glow-hover-pink:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 0, 127, 0.6);
+            box-shadow: 0 15px 30px -10px rgba(255, 0, 127, 0.3),
+                        0 0 15px rgba(255, 0, 127, 0.4);
+        }
+
+        /* 記事カード用のグラデーション発光 */
+        .glow-hover-gradient:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 240, 255, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(0, 240, 255, 0.2),
+                        0 0 20px rgba(255, 0, 127, 0.15);
+        }
+
+        .neon-marker-blue {
+            background: linear-gradient(transparent 60%, rgba(0, 240, 255, 0.25) 0%);
+        }
+
+        /* スムーススクロール */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
-<body class="bg-navy-900 text-silver selection:bg-blue-500/30">
-    <div class="data-overlay"></div>
+<body class="bg-navy-900 text-slate-100 selection:bg-neon-pink/30 selection:text-white">
+
+    <!-- 背景の装飾光球 -->
+    <div class="bg-glow-blue top-20 left-[-150px]"></div>
+    <div class="bg-glow-pink top-[800px] right-[-150px]"></div>
+    <div class="bg-glow-blue top-[1800px] left-[-200px]"></div>
+    <div class="bg-glow-pink top-[2800px] right-[-150px]"></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 border-b border-white/5 bg-navy-950/80 backdrop-blur-md">
+    <nav class="fixed w-full z-50 border-b border-white/5 bg-navy-950/70 backdrop-blur-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-2 h-8 bg-blue-500 rounded-full glow"></div>
-                <span class="font-display font-bold text-xl tracking-tighter uppercase text-gradient-silver">Prejuvenation</span>
-            </div>
-            <div class="hidden md:flex space-x-8 text-[10px] font-bold tracking-[0.2em] uppercase">
-                <a href="#concept" class="hover:text-blue-400 transition-colors">Concept</a>
-                <a href="#glossary" class="hover:text-blue-400 transition-colors">Glossary</a>
-                <a href="#innovation" class="hover:text-blue-400 transition-colors">Innovation</a>
-                <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
-                <a href="../index.html" class="px-3 py-1 border border-blue-500/30 rounded hover:bg-blue-500 hover:text-white transition-all">HUB</a>
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-neon-blue animate-pulse"></span>
+                <span class="font-display font-extrabold text-xl tracking-tighter uppercase bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-pink">
+                    PREJUVENATION.JP
+                </span>
+            </a>
+            <div class="flex items-center space-x-6 text-[11px] font-bold tracking-[0.15em] uppercase">
+                <a href="#trends" class="hover:text-neon-blue transition-colors duration-200">TRENDS</a>
+                <a href="#featured" class="hover:text-neon-pink transition-colors duration-200">FEATURED</a>
+                <a href="#feed" class="px-3.5 py-1.5 rounded-full border border-neon-blue/30 text-neon-blue hover:bg-neon-blue hover:text-navy-900 hover:border-neon-blue transition-all duration-300">LATEST FEED</a>
             </div>
         </div>
     </nav>
 
-    <main class="relative">
-        <!-- Title Section -->
-        <section id="title" class="min-h-screen flex items-center justify-center pt-20 hero-bg">
-            <div class="container mx-auto px-6 text-center">
-                <div class="inline-block px-4 py-1 border border-blue-500/20 rounded-full mb-8 pulse-bg bg-navy-950/50 backdrop-blur-sm">
-                    <span class="text-[10px] uppercase tracking-[0.5em] text-blue-400 font-bold">Research Portal // Prejuvenation</span>
-                </div>
-                <h1 class="font-display text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter leading-tight">
-                    <span class="text-cyber-glow">Prejuvenation</span>
-                    <span class="block text-sm md:text-lg font-bold tracking-[0.3em] text-silver/40 lowercase mb-4">[プレジュビネーション]</span>
-                    <span class="text-gradient-silver text-2xl md:text-4xl">未然若返り：老化を、過去の遺物にする</span>
-                </h1>
-                <p class="max-w-2xl mx-auto text-silver/60 text-sm md:text-base font-light tracking-widest uppercase mb-12">
-                    ADVANCED PROPHYLACTIC BIOMEDICAL INFRASTRUCTURE.
-                </p>
-                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                    <a href="#concept" class="btn-cyber">プロトコルへアクセス</a>
-                    <a href="#contact" class="text-xs font-bold tracking-widest text-silver/40 hover:text-white transition-colors">研究・調査依頼はこちら</a>
-                </div>
+    <!-- Main Content -->
+    <main class="relative pt-24 pb-20 z-10">
+
+        <!-- Hero Section -->
+        <section class="container mx-auto px-6 py-12 md:py-20 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 border border-neon-blue/20 rounded-full mb-6 bg-navy-950/40 backdrop-blur-sm">
+                <span class="text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-neon-blue font-bold">
+                    Next-Gen Skincare & Longevity Media
+                </span>
+            </div>
+            <h1 class="font-display text-4xl md:text-6xl font-black tracking-tight leading-tight uppercase mb-6">
+                TIMELESS RESILIENCE<br>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-purple-400 to-neon-pink">
+                    若さを、自分の手に。
+                </span>
+            </h1>
+            <p class="text-sm md:text-base text-slate-400 font-light tracking-wide max-w-xl mx-auto mb-10">
+                20代〜30代のための『最先端・若化（プレジュビネーション）トレンドメディア』。
+                老化を待つ時代は終わった。細胞レベルのスキンケアで、未来の肌を今からデザインする。
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#featured" class="w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm bg-gradient-to-r from-neon-blue to-neon-pink text-navy-900 shadow-lg shadow-neon-blue/20 hover:shadow-neon-pink/30 hover:scale-[1.02] transition-all duration-300">
+                    特集記事を読む
+                </a>
+                <a href="#feed" class="w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-sm border border-white/10 hover:border-neon-blue/50 hover:bg-white/5 transition-all duration-300">
+                    最新記事一覧を見る
+                </a>
             </div>
         </section>
 
-        <div class="cyber-hr"></div>
+        <!-- Trend Words Section -->
+        <section id="trends" class="container mx-auto px-6 py-12 scroll-mt-20">
+            <div class="text-center mb-10">
+                <h2 class="font-display text-2xl md:text-3xl font-black italic tracking-wider uppercase mb-2">
+                    #SKIN_LONGEVITY
+                </h2>
+                <p class="text-xs md:text-sm text-slate-400 tracking-widest font-bold">
+                    SNSでバズり倒している「若化」最新トレンドワード5選
+                </p>
+            </div>
 
-        <!-- Concept Section -->
-        <section id="concept" class="py-32 container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="order-2 lg:order-1">
-                    <div class="w-12 h-1 bg-blue-500 mb-8"></div>
-                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-8 italic">Concept</h2>
-                    <p class="text-2xl md:text-4xl font-bold text-silver mb-8 leading-tight">
-                        「老いを待たない。若さを、維持し続ける。」
-                    </p>
-                    <p class="text-lg md:text-xl text-silver/80 font-light leading-relaxed mb-8">
-                        日本が直面する超高齢社会の出口は、治療ではなく「未然の若返り」にあります。私たちは、老化が進行してから対処する従来の医療を脱却し、細胞レベルで常に若々しさを最適化し続ける新世代のインフラストラクチャを構築します。
-                    </p>
-                    <div class="premium-glass p-8 rounded-xl border-l-4 border-blue-500/50">
-                        <p class="text-sm text-silver/50 font-light">
-                            私たちの使命は、時間を巻き戻すだけでなく、老化そのものを「選択可能なオプション」へと変えることです。バイオテクノロジーとデジタルツインの融合により、永続的な生命の輝きを追求します。
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
+                
+                <!-- Word 1: PDRN -->
+                <a href="article-pdrn.html" class="glass-card p-6 flex flex-col justify-between glow-hover-blue">
+                    <div>
+                        <div class="text-[10px] font-bold text-neon-blue uppercase tracking-widest mb-3">01 // TREND</div>
+                        <h3 class="font-display font-extrabold text-xl mb-2 text-white italic">PDRN</h3>
+                        <p class="text-xs text-slate-400 font-light leading-relaxed">
+                            鮭のDNAから抽出された次世代の自己修復成分。別名「塗るサーモン注射」として美容液市場を席巻中。
                         </p>
                     </div>
-                </div>
-                <div class="order-1 lg:order-2">
-                    <div class="cyber-card p-1 rounded aspect-square flex items-center justify-center">
-                        <div class="w-full h-full border border-blue-500/10 rounded flex items-center justify-center relative overflow-hidden bg-navy-950/20">
-                             <div class="absolute inset-0 bg-blue-500/5 animate-pulse"></div>
-                             <span class="text-[10rem] font-bold text-white/5 select-none">YOUTH</span>
-                        </div>
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="text-[10px] text-slate-500 font-bold">#サーモン美容液</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-neon-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
                     </div>
-                </div>
+                </a>
+
+                <!-- Word 2: Skin Cycling -->
+                <a href="article-skin-cycling.html" class="glass-card p-6 flex flex-col justify-between glow-hover-pink">
+                    <div>
+                        <div class="text-[10px] font-bold text-neon-pink uppercase tracking-widest mb-3">02 // TREND</div>
+                        <h3 class="font-display font-extrabold text-xl mb-2 text-white italic">Skin Cycling</h3>
+                        <p class="text-xs text-slate-400 font-light leading-relaxed">
+                            角質ケア、レチノール、保湿を4日周期で切り替える超効率的ケア。肌バリアを壊さずに攻める。
+                        </p>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="text-[10px] text-slate-500 font-bold">#肌サイクル</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-neon-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Word 3: Exosomes -->
+                <a href="article-exosomes.html" class="glass-card p-6 flex flex-col justify-between glow-hover-blue">
+                    <div>
+                        <div class="text-[10px] font-bold text-neon-blue uppercase tracking-widest mb-3">03 // TREND</div>
+                        <h3 class="font-display font-extrabold text-xl mb-2 text-white italic">Exosomes</h3>
+                        <p class="text-xs text-slate-400 font-light leading-relaxed">
+                            細胞間で働く情報伝達物質。劣化した細胞の再生を促す次世代型エイジングケアとして熱視線。
+                        </p>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="text-[10px] text-slate-500 font-bold">#エクソソーム</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-neon-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </div>
+                </a>
+
+                <!-- Word 4: Slugging -->
+                <a href="#feed" class="glass-card p-6 flex flex-col justify-between glow-hover-pink">
+                    <div>
+                        <div class="text-[10px] font-bold text-neon-pink uppercase tracking-widest mb-3">04 // TREND</div>
+                        <h3 class="font-display font-extrabold text-xl mb-2 text-white italic">Slugging</h3>
+                        <p class="text-xs text-slate-400 font-light leading-relaxed">
+                            スキンケアの最後にワセリン等のバームを厚塗りして水分を閉じ込める、海外発の極限保湿ハック。
+                        </p>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="text-[10px] text-slate-500 font-bold">#スラッギング</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-neon-pink"></span>
+                    </div>
+                </a>
+
+                <!-- Word 5: Inner Glow -->
+                <a href="article-inner-glow.html" class="glass-card p-6 flex flex-col justify-between glow-hover-blue">
+                    <div>
+                        <div class="text-[10px] font-bold text-neon-blue uppercase tracking-widest mb-3">05 // TREND</div>
+                        <h3 class="font-display font-extrabold text-xl mb-2 text-white italic">Inner Glow</h3>
+                        <p class="text-xs text-slate-400 font-light leading-relaxed">
+                            グルタチオンやリポソームビタミンC、コラーゲンサプリ等を活用し、内側から発光させる透明感ケア。
+                        </p>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center">
+                        <span class="text-[10px] text-slate-500 font-bold">#飲むスキンケア</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-neon-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </div>
+                </a>
+
             </div>
         </section>
 
-        <div class="cyber-hr"></div>
-
-        <!-- Glossary Section -->
-        <section id="glossary" class="py-32 container mx-auto px-6 bg-navy-950/30">
-            <h2 class="font-display text-4xl font-bold mb-16 text-center italic tracking-widest uppercase">Glossary</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <div class="cyber-card p-8 rounded-lg hover:border-blue-500/40 glossary-card">
-                    <h3 class="font-display font-bold text-lg text-blue-400 mb-2 uppercase tracking-wider">Pre-Aging Scan</h3>
-                    <p class="text-sm text-silver/60 leading-relaxed font-light mt-4">老化の予兆をナノレベルで検知する超精密診断。発症前に細胞の変化を捉え、介入のタイミングを特定します。</p>
-                </div>
-                <div class="cyber-card p-8 rounded-lg hover:border-blue-500/40 glossary-card">
-                    <h3 class="font-display font-bold text-lg text-blue-400 mb-2 uppercase tracking-wider">Cellular Rebirth</h3>
-                    <p class="text-sm text-silver/60 leading-relaxed font-light mt-4">細胞情報の再プログラミング技術。劣化した細胞の記憶をリセットし、生物学的な若さを復元します。</p>
-                </div>
-                <div class="cyber-card p-8 rounded-lg hover:border-blue-500/40 glossary-card">
-                    <h3 class="font-display font-bold text-lg text-blue-400 mb-2 uppercase tracking-wider">Bio-Resilience</h3>
-                    <p class="text-sm text-silver/60 leading-relaxed font-light mt-4">環境ストレスへの適応能力と、加齢に対する耐性の永続的強化。内外の要因に左右されない強靭な生命力を構築します。</p>
-                </div>
-                <div class="cyber-card p-8 rounded-lg hover:border-blue-500/40 glossary-card">
-                    <h3 class="font-display font-bold text-lg text-blue-400 mb-2 uppercase tracking-wider">Senolytics</h3>
-                    <p class="text-[10px] text-blue-500/60 uppercase font-black mb-2 -mt-1">老化細胞除去</p>
-                    <p class="text-sm text-silver/60 leading-relaxed font-light mt-4">セノリティクス。体内に蓄積する「ゾンビ細胞（老化細胞）」を選択的に排除し、組織の慢性炎症を根本から解消します。</p>
-                </div>
-                <div class="cyber-card p-8 rounded-lg hover:border-blue-500/40 glossary-card">
-                    <h3 class="font-display font-bold text-lg text-blue-400 mb-2 uppercase tracking-wider">Mitochondrial Boost</h3>
-                    <p class="text-[10px] text-blue-500/60 uppercase font-black mb-2 -mt-1">ミトコンドリア・ブースト</p>
-                    <p class="text-sm text-silver/60 leading-relaxed font-light mt-4">細胞内のエネルギー発電所を最適化。ミトコンドリアの機能を劇的に向上させ、生命活動の根源的な出力を最大化します。</p>
-                </div>
+        <!-- Category Filter Tabs -->
+        <section class="container mx-auto px-6 py-6 max-w-7xl">
+            <div class="flex flex-wrap items-center justify-center gap-3 border-b border-white/5 pb-6">
+                <button data-filter="all" class="px-4 py-2 rounded-full text-xs font-bold bg-gradient-to-r from-neon-blue to-neon-pink text-navy-900 shadow-md transition-all duration-300">
+                    # ALL (すべて)
+                </button>
+                <button data-filter="skincare" class="px-4 py-2 rounded-full text-xs font-bold bg-white/5 border border-white/10 hover:border-neon-blue/50 text-slate-300 hover:text-white transition-all duration-300">
+                    # SKIN_CARE (スキンケア)
+                </button>
+                <button data-filter="inner" class="px-4 py-2 rounded-full text-xs font-bold bg-white/5 border border-white/10 hover:border-neon-pink/50 text-slate-300 hover:text-white transition-all duration-300">
+                    # INNER_BEAUTY (インナーケア)
+                </button>
+                <button data-filter="science" class="px-4 py-2 rounded-full text-xs font-bold bg-white/5 border border-white/10 hover:border-neon-blue/50 text-slate-300 hover:text-white transition-all duration-300">
+                    # SCIENCE (最新科学/クリニック)
+                </button>
             </div>
         </section>
 
-        <div class="cyber-hr"></div>
-
-        <!-- Technological Innovation Section -->
-        <section id="innovation" class="py-32 container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16">
-                    <span class="text-[10px] text-blue-500 font-bold uppercase tracking-widest">Technological Innovation</span>
-                    <h2 class="font-display text-4xl font-bold mt-4 italic">Core Disruptions</h2>
+        <!-- Featured Article Section -->
+        <section id="featured" class="container mx-auto px-4 py-8 max-w-4xl scroll-mt-20">
+            <div class="glass-card p-6 md:p-12 border-neon-blue/10">
+                
+                <!-- Category and Date -->
+                <div class="flex items-center space-x-3 mb-6">
+                    <span class="px-3 py-1 rounded bg-neon-pink/10 text-neon-pink font-bold text-[10px] tracking-wider uppercase">
+                        FEATURED // 特集記事
+                    </span>
+                    <span class="text-xs text-slate-500 font-semibold">2026.06.04</span>
                 </div>
-                <div class="grid grid-cols-1 gap-8">
-                    <div class="cyber-card p-10 rounded-2xl relative overflow-hidden group">
-                        <div class="flex items-start gap-6">
-                            <div class="text-blue-500 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.183.244l-.28.14a2 2 0 01-2.983-1.484V9.24a2 2 0 011.084-1.78l.358-.179a2 2 0 001.077-1.903l-.116-2.326a2 2 0 012.983-1.484l.28.14a2 2 0 001.183.244l2.536-.363a6 6 0 013.86-.517l.318-.158a6 6 0 013.86-.517l2.387.477a2 2 0 011.022.547l.14.7a2 2 0 002.505 1.583l2.366-.591a2 2 0 012.037 2.812l-.28.14a2 2 0 00-1.183.244l.363 2.536a2 2 0 01-1.022 1.547l-.7.14a2 2 0 00-1.583 2.505l.591 2.366a2 2 0 01-2.812 2.037l-.14-.28a2 2 0 00-.244-1.183l-2.536.363z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-display font-bold text-xl mb-4 text-silver-bright italic">Cellular Reset Protocol</h3>
-                                <p class="text-lg font-light text-silver/80 leading-relaxed">
-                                    老化により劣化した細胞の「初期化」を実現するプロトコル。エピジェネティック・リプログラミングにより、細胞が持つ本来のポテンシャルを解放します。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cyber-card p-10 rounded-2xl relative overflow-hidden group">
-                        <div class="flex items-start gap-6">
-                            <div class="text-blue-500 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-display font-bold text-xl mb-4 text-silver-bright italic">Predictive Bio-Monitoring</h3>
-                                <p class="text-lg font-light text-silver/80 leading-relaxed">
-                                    AIによる常時生体データ監視システム。デジタルツイン上で老化シミュレーションを継続的に実行し、最適な介入タイミングを自動的に算定します。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cyber-card p-10 rounded-2xl relative overflow-hidden group">
-                        <div class="flex items-start gap-6">
-                            <div class="text-blue-500 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h3 class="font-display font-bold text-xl mb-4 text-silver-bright italic">Senescence Cleansing</h3>
-                                <p class="text-lg font-light text-silver/80 leading-relaxed">
-                                    次世代セノリティクス薬物送達システム。老化細胞が分泌する有害因子を遮断し、細胞レベルのクレンジングを行うことで、組織全体の健康を維持します。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <div class="cyber-hr"></div>
+                <!-- Article Title -->
+                <h1 class="text-2xl md:text-4xl font-extrabold leading-snug tracking-tight mb-6 text-white">
+                    20代がガチで始めてる「塗るサーモン注射」がヤバい。<br class="hidden md:inline">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-purple-400">
+                        レチノール超えの毛穴・ハリ消滅ルーティン
+                    </span>
+                </h1>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-32 container mx-auto px-6 text-center">
-            <h2 class="font-display text-5xl md:text-7xl font-black mb-12 uppercase tracking-tighter italic">Contact</h2>
-            <div class="max-w-2xl mx-auto cyber-card p-12 rounded-3xl border-blue-500/20">
-                <p class="text-xl text-silver/80 mb-12 font-light leading-relaxed">
-                    提携・調査依頼、およびインフラ活用に関するお問い合わせはこちらから。
+                <!-- Lead Paragraph -->
+                <p class="text-sm md:text-base text-slate-300 leading-relaxed font-light mb-8">
+                    SNSでバズワード連発の「プレジュビネーション（予防若返り）」。その中でも今、美容クリニック帰りの肌になれるとバズっているのが<span class="neon-marker-blue font-semibold text-white">「PDRN（サーモン美容液）」</span>。レチノールのA反応に耐えられない人でも使える、新次元の毛穴・ハリ消滅ケアを詳細レポート。
                 </p>
-                <div class="space-y-4">
-                    <a href="mailto:info@prejuvenation.jp?subject=【お問い合わせ】Prejuvenation" class="btn-cyber block w-full">お問い合わせ</a>
-                    <p class="text-[10px] text-silver/30 uppercase tracking-widest mt-6">Direct Email: info@prejuvenation.jp // encrypted</p>
+
+                <!-- Read More CTA -->
+                <div class="flex justify-start">
+                    <a href="article-pdrn.html" class="inline-flex items-center space-x-2 px-6 py-3 rounded-full font-bold text-xs bg-white/5 border border-neon-blue/30 text-neon-blue hover:bg-neon-blue hover:text-navy-900 transition-all duration-300 shadow-[0_0_10px_rgba(0,240,255,0.1)] hover:shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+                        <span>この記事を読む</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
                 </div>
+
             </div>
         </section>
+
+        <!-- Articles Feed Section (Future scalability) -->
+        <section id="feed" class="container mx-auto px-6 py-12 max-w-7xl scroll-mt-20">
+            <div class="text-center mb-10">
+                <span class="text-xs text-neon-blue font-extrabold uppercase tracking-widest block mb-2">// LATEST FEED //</span>
+                <h2 class="text-xl md:text-3xl font-black text-white italic">
+                    最新トレンド記事一覧
+                </h2>
+            </div>
+
+            <!-- Scalable Article Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Article Card 1 (PDRN) -->
+                <div data-category="skincare" class="glass-card flex flex-col justify-between overflow-hidden glow-hover-gradient border-neon-blue/10">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2 py-0.5 rounded bg-neon-blue/10 text-neon-blue text-[9px] font-bold">#SKIN_CARE</span>
+                            <span class="text-[9px] text-slate-500 font-bold">PUBLISHED</span>
+                        </div>
+                        <h3 class="font-bold text-base text-white mb-3 mt-1 leading-tight hover:text-neon-blue transition-colors duration-200">
+                            20代がガチで始めてる「塗るサーモン注射」がヤバい。レチノール超えの毛穴・ハリ消滅ルーティン
+                        </h3>
+                        <p class="text-xs text-slate-400 font-light leading-relaxed">
+                            話題のPDRN（サーモン美容液）がなぜ毛穴や肌バリア修復にこれほど強いのか、徹底解説！
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="article-pdrn.html" class="inline-flex items-center space-x-1.5 text-[10px] font-bold text-neon-blue uppercase tracking-wider">
+                            <span>記事を読む</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article Card 2 (Skin Cycling) -->
+                <div data-category="skincare" class="glass-card flex flex-col justify-between overflow-hidden glow-hover-gradient border-neon-pink/10">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2 py-0.5 rounded bg-neon-pink/10 text-neon-pink text-[9px] font-bold">#SKIN_CARE</span>
+                            <span class="text-[9px] text-slate-500 font-bold">PUBLISHED</span>
+                        </div>
+                        <h3 class="font-bold text-base text-white mb-3 mt-1 leading-tight hover:text-neon-pink transition-colors duration-200">
+                            【保存版】攻めと守りの4日間『Skin Cycling（スキンサイクリング）』で肌バリアを壊さず毛穴レスになる方法
+                        </h3>
+                        <p class="text-xs text-slate-400 font-light leading-relaxed">
+                            レチノールと角質ケアの併用で悩む人必見！皮膚科医考案の合理的スキンケアサイクル。
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="article-skin-cycling.html" class="inline-flex items-center space-x-1.5 text-[10px] font-bold text-neon-pink uppercase tracking-wider">
+                            <span>記事を読む</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article Card 3 (Exosomes) -->
+                <div data-category="science" class="glass-card flex flex-col justify-between overflow-hidden glow-hover-gradient border-neon-blue/10">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2 py-0.5 rounded bg-neon-blue/10 text-neon-blue text-[9px] font-bold">#SCIENCE</span>
+                            <span class="text-[9px] text-slate-500 font-bold">PUBLISHED</span>
+                        </div>
+                        <h3 class="font-bold text-base text-white mb-3 mt-1 leading-tight hover:text-neon-blue transition-colors duration-200">
+                            【細胞レベルの若化】エクソソーム美容液って実際何？選び方と効果を徹底解説
+                        </h3>
+                        <p class="text-xs text-slate-400 font-light leading-relaxed">
+                            幹細胞から抽出される最新成分「エクソソーム」の実力と、若化へのアプローチを科学的に紐解く。
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="article-exosomes.html" class="inline-flex items-center space-x-1.5 text-[10px] font-bold text-neon-blue uppercase tracking-wider">
+                            <span>記事を読む</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Article Card 4 (Inner Glow) -->
+                <div data-category="inner" class="glass-card flex flex-col justify-between overflow-hidden glow-hover-gradient border-neon-pink/10">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-2 py-0.5 rounded bg-neon-pink/10 text-neon-pink text-[9px] font-bold">#INNER_BEAUTY</span>
+                            <span class="text-[9px] text-slate-500 font-bold">PUBLISHED</span>
+                        </div>
+                        <h3 class="font-bold text-base text-white mb-3 mt-1 leading-tight hover:text-neon-pink transition-colors duration-200">
+                            【インナーケア】飲む白玉点滴!? グルタチオン＆リポソームビタミンCで内側から発光する肌へ
+                        </h3>
+                        <p class="text-xs text-slate-400 font-light leading-relaxed">
+                            サプリやドリンクで取り入れるインナービューティーの最前線。透明感をブーストする最強の組み合わせ。
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="article-inner-glow.html" class="inline-flex items-center space-x-1.5 text-[10px] font-bold text-neon-pink uppercase tracking-wider">
+                            <span>記事を読む</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
-    <footer class="py-12 border-t border-white/5 bg-navy-950">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center opacity-40">
-            <div class="text-xs font-bold tracking-widest uppercase mb-4 md:mb-0">Next-Tech-Infrastructures // Prejuvenation</div>
-            <div class="text-[10px] font-light">
-                &copy; 2026 PREJUVENATION | プレジュビネーション 日本事務局
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-navy-950/80 z-20 relative">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center opacity-60">
+            <div class="text-xs font-bold tracking-widest uppercase mb-4 md:mb-0 bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-pink">
+                PREJUVENATION.JP
+            </div>
+            <div class="text-[10px] font-light text-slate-500">
+                &copy; 2026 PREJUVENATION | プレジュビネーション・トレンドメディア. All Rights Reserved.
             </div>
         </div>
     </footer>
+
+    <!-- Category Filtering Vanilla JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('[data-filter]');
+            const articleCards = document.querySelectorAll('[data-category]');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filterValue = button.getAttribute('data-filter');
+
+                    // アクティブボタンのスタイル変更
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-gradient-to-r', 'from-neon-blue', 'to-neon-pink', 'text-navy-900', 'shadow-md');
+                        btn.classList.add('bg-white/5', 'border-white/10', 'text-slate-300');
+                    });
+                    button.classList.remove('bg-white/5', 'border-white/10', 'text-slate-300');
+                    button.classList.add('bg-gradient-to-r', 'from-neon-blue', 'to-neon-pink', 'text-navy-900', 'shadow-md');
+
+                    // カードの表示・非表示切り替え（フェードアニメーション効果）
+                    articleCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (filterValue === 'all' || cardCategory === filterValue) {
+                            card.style.display = 'flex';
+                            // 微小な遅延を入れることでフェードインアニメーションを滑らかにする
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 30);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.95)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

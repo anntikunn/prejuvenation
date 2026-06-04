@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【細胞レベルの若化】エクソソーム美容液って実際何？選び方と効果を徹底解説 | Prejuvenation.jp</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#070913',
+                            950: '#03040a',
+                        },
+                        neon: {
+                            blue: '#00f0ff',
+                            pink: '#ff007f',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #05070f;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        /* 背景のネオン球体グラデーション */
+        .bg-glow-blue {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 240, 255, 0.08) 0%, rgba(0, 240, 255, 0) 70%);
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-glow-pink {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 0, 127, 0.06) 0%, rgba(255, 0, 127, 0) 70%);
+            filter: blur(80px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* グラスモルフィズムカード */
+        .glass-card {
+            background: rgba(10, 15, 30, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1.25rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* トレンドグリッド用のホバー発光 */
+        .glow-hover-gradient:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 240, 255, 0.4);
+            box-shadow: 0 15px 30px -10px rgba(0, 240, 255, 0.25),
+                        0 0 15px rgba(255, 0, 127, 0.15);
+        }
+
+        /* チャット吹き出し用 */
+        .chat-bubble-left {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            position: relative;
+        }
+
+        .chat-bubble-right {
+            background: rgba(0, 240, 255, 0.12);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            position: relative;
+        }
+
+        .neon-marker-blue {
+            background: linear-gradient(transparent 60%, rgba(0, 240, 255, 0.25) 0%);
+        }
+
+        .neon-marker-pink {
+            background: linear-gradient(transparent 60%, rgba(255, 0, 127, 0.25) 0%);
+        }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-100 selection:bg-neon-pink/30 selection:text-white">
+
+    <!-- 背景の装飾光球 -->
+    <div class="bg-glow-blue top-20 left-[-150px]"></div>
+    <div class="bg-glow-pink top-[800px] right-[-150px]"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 border-b border-white/5 bg-navy-950/70 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-neon-blue animate-pulse"></span>
+                <span class="font-display font-extrabold text-xl tracking-tighter uppercase bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-pink">
+                    PREJUVENATION.JP
+                </span>
+            </a>
+            <div class="flex items-center space-x-6 text-[11px] font-bold tracking-[0.15em] uppercase">
+                <a href="index.html" class="hover:text-neon-blue transition-colors duration-200">BACK TO HOME</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative pt-28 pb-20 z-10 max-w-4xl mx-auto px-4">
+        
+        <!-- Article Wrapper -->
+        <article class="glass-card p-6 md:p-12 border-neon-blue/10">
+            
+            <!-- Category & Date -->
+            <div class="flex items-center space-x-3 mb-6">
+                <a href="index.html" class="px-3 py-1 rounded bg-neon-blue/10 text-neon-blue font-bold text-[10px] tracking-wider uppercase hover:bg-neon-blue/20 transition-all duration-200">
+                    #SCIENCE
+                </a>
+                <span class="text-xs text-slate-500 font-semibold">2026.06.04</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-2xl md:text-4xl font-extrabold leading-snug tracking-tight mb-8 text-white">
+                【細胞レベルの若化】エクソソーム美容液って実際何？<br class="hidden md:inline">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-purple-400">
+                    仕組みと効果、失敗しない選び方を徹底解説
+                </span>
+            </h1>
+
+            <!-- Lead -->
+            <p class="text-sm md:text-base text-slate-300 leading-relaxed font-light mb-10">
+                最近、デパコスや韓国スキンケア、さらには美容クリニックでも「エクソソーム」という言葉を非常によく目にします。「なんだか凄そうだけど、結局何なの？」という疑問を持つ方も多いはず。今回は、細胞のメッセンジャーとして働く最先端の若化（プレジュビネーション）成分<span class="neon-marker-blue font-semibold text-white">「エクソソーム」</span>の凄さと選び方のポイントを徹底的に解き明かします！
+            </p>
+
+            <div class="h-px bg-white/5 my-8"></div>
+
+            <!-- Chat Section -->
+            <div class="space-y-6 mb-12">
+                <div class="text-xs text-slate-500 font-bold uppercase tracking-widest mb-4">💬 QUICK DISCUSS / サクッと理解する</div>
+                
+                <!-- Chat 1 -->
+                <div class="flex items-start space-x-3">
+                    <div class="w-9 h-9 rounded-full flex items-center justify-center text-[11px] font-bold text-white shrink-0 bg-gradient-to-tr from-pink-500 to-rose-500 shadow-[0_0_10px_rgba(244,114,182,0.4)]">
+                        ユウ
+                    </div>
+                    <div class="chat-bubble-left p-4 max-w-[80%] text-sm text-slate-200">
+                        「エクソソームって、なんか理科の授業に出てきそうな名前だけど…ぶっちゃけお肌に何をしてくれるの？🧪」
+                    </div>
+                </div>
+
+                <!-- Chat 2 -->
+                <div class="flex items-start space-x-3 justify-end">
+                    <div class="chat-bubble-right p-4 max-w-[80%] text-sm text-slate-200">
+                        「簡単に言うと、細胞同士で会話するための『メッセージ付きカプセル』だよ！弱った肌細胞に『若返って！コラーゲン作って！』っていう指令を直接届けてくれるの✨」
+                    </div>
+                    <div class="w-9 h-9 rounded-full flex items-center justify-center text-[11px] font-bold text-navy-900 shrink-0 bg-gradient-to-tr from-cyan-400 to-blue-500 shadow-[0_0_10px_rgba(34,211,238,0.4)]">
+                        ミク
+                    </div>
+                </div>
+
+                <!-- Chat 3 -->
+                <div class="flex items-start space-x-3">
+                    <div class="w-9 h-9 rounded-full flex items-center justify-center text-[11px] font-bold text-white shrink-0 bg-gradient-to-tr from-pink-500 to-rose-500 shadow-[0_0_10px_rgba(244,114,182,0.4)]">
+                        ユウ
+                    </div>
+                    <div class="chat-bubble-left p-4 max-w-[80%] text-sm text-slate-200">
+                        「へえー！じゃあ今までの美容液みたいに、ただ表面からうるおいを足すのとは全然違うんだね」
+                    </div>
+                </div>
+
+                <!-- Chat 4 -->
+                <div class="flex items-start space-x-3 justify-end">
+                    <div class="chat-bubble-right p-4 max-w-[80%] text-sm text-slate-200">
+                        「そう！これまでのスキンケアが『足りないものを外から補う（水分や油分）』だったのに対して、エクソソームは『肌細胞の工場自体を再稼働させる（再生）』アプローチだから、次元が違うの！」
+                    </div>
+                    <div class="w-9 h-9 rounded-full flex items-center justify-center text-[11px] font-bold text-navy-900 shrink-0 bg-gradient-to-tr from-cyan-400 to-blue-500 shadow-[0_0_10px_rgba(34,211,238,0.4)]">
+                        ミク
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Content -->
+            <h2 class="text-xl md:text-2xl font-bold text-white mb-6 flex items-center space-x-2">
+                <span class="text-neon-pink">■</span>
+                <span>細胞をブースト！エクソソーム美容液の3大効果</span>
+            </h2>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 gap-4 mb-12">
+                <div class="bg-white/5 border border-white/5 p-5 rounded-xl">
+                    <div class="flex items-start space-x-3">
+                        <span class="flex items-center justify-center w-6 h-6 rounded-full bg-neon-blue/20 text-neon-blue font-bold text-sm shrink-0">1</span>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">コラーゲンとハリの「根源的活性化」</h3>
+                            <p class="text-xs md:text-sm text-slate-400 font-light leading-relaxed">
+                                線維芽細胞（コラーゲンを作る細胞）に直接メッセージを届け、肌の弾力成分の分泌を劇的に促します。これにより、ピンと張った内側からのハリ感をもたらします。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/5 p-5 rounded-xl">
+                    <div class="flex items-start space-x-3">
+                        <span class="flex items-center justify-center w-6 h-6 rounded-full bg-neon-pink/20 text-neon-pink font-bold text-sm shrink-0">2</span>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">圧倒的な肌荒れ防止＆「バリア修復スピード」</h3>
+                            <p class="text-xs md:text-sm text-slate-400 font-light leading-relaxed">
+                                肌の微細な炎症（ニキビ跡や赤み、ヒリつき）を鎮静するシグナルを細胞に送信。荒れた肌組織を高速で元の健康な状態へ修復するようサポートします。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/5 p-5 rounded-xl">
+                    <div class="flex items-start space-x-3">
+                        <span class="flex items-center justify-center w-6 h-6 rounded-full bg-neon-blue/20 text-neon-blue font-bold text-sm shrink-0">3</span>
+                        <div>
+                            <h3 class="font-bold text-white mb-1">他のスキンケア成分のポテンシャルを何倍にも引き出す</h3>
+                            <p class="text-xs md:text-sm text-slate-400 font-light leading-relaxed">
+                                細胞膜と似た構造（脂質二重層）を持つナノサイズカプセルなので、同時に配合されている他の有用成分（ヒアルロン酸やビタミンなど）を肌の奥深くへ届けるデリバリーシステムとしても優秀です。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="text-center max-w-xl mx-auto pt-8 border-t border-white/5">
+                <h3 class="font-bold text-white text-lg mb-4">
+                    細胞が目覚める、未来のエイジングケア。
+                </h3>
+                <p class="text-xs md:text-sm text-slate-400 leading-relaxed font-light mb-8">
+                    エクソソームは、細胞自体の活動能力を引き上げて「自力でうるおう・自力でハリを保つ」肌へと導く、まさにプレジュビネーションの究極系。選ぶ際は「ヒト幹細胞由来で高純度」の表記をチェックして、細胞の若返りを体感してみて。
+                </p>
+                <a href="index.html" class="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-neon-blue hover:text-neon-pink transition-colors duration-300">
+                    <span>トップページに戻る</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                </a>
+            </div>
+
+        </article>
+
+        <!-- Recommended Articles Grid -->
+        <section class="mt-16">
+            <h3 class="text-sm font-bold tracking-widest text-slate-500 uppercase mb-6 text-center">// RELATED ARTICLES //</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Related Card 1: PDRN -->
+                <a href="article-pdrn.html" class="glass-card p-6 flex flex-col justify-between glow-hover-gradient">
+                    <div>
+                        <span class="px-2 py-0.5 rounded bg-neon-blue/10 text-neon-blue text-[9px] font-bold">#SKIN_CARE</span>
+                        <h4 class="font-bold text-sm text-white mb-2 mt-3 leading-tight hover:text-neon-blue transition-colors duration-200">
+                            20代がガチで始めてる「塗るサーモン注射」がヤバい。レチノール超えの毛穴・ハリ消滅ルーティン
+                        </h4>
+                        <p class="text-[11px] text-slate-400 font-light leading-relaxed">
+                            話題のPDRN（サーモン美容液）がなぜ毛穴や肌バリア修復にこれほど強いのか、徹底解説！
+                        </p>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center text-[10px] text-slate-500 font-bold">
+                        <span>READ NOW</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-neon-blue"></span>
+                    </div>
+                </a>
+
+                <!-- Related Card 2: Skin Cycling -->
+                <a href="article-skin-cycling.html" class="glass-card p-6 flex flex-col justify-between glow-hover-gradient">
+                    <div>
+                        <span class="px-2 py-0.5 rounded bg-neon-pink/10 text-neon-pink text-[9px] font-bold">#SKIN_CARE</span>
+                        <h4 class="font-bold text-sm text-white mb-2 mt-3 leading-tight hover:text-neon-pink transition-colors duration-200">
+                            【保存版】攻めと守りの4日間「Skin Cycling」で肌バリアを壊さず毛穴レスになる方法
+                        </h4>
+                        <p class="text-[11px] text-slate-400 font-light leading-relaxed">
+                            レチノールと角質ケアの併用で悩む人必見！皮膚科医考案の合理的サイクル。
+                        </p>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center text-[10px] text-slate-500 font-bold">
+                        <span>READ NOW</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-neon-pink"></span>
+                    </div>
+                </a>
+
+                <!-- Related Card 3: Inner Glow -->
+                <a href="article-inner-glow.html" class="glass-card p-6 flex flex-col justify-between glow-hover-gradient">
+                    <div>
+                        <span class="px-2 py-0.5 rounded bg-neon-pink/10 text-neon-pink text-[9px] font-bold">#INNER_BEAUTY</span>
+                        <h4 class="font-bold text-sm text-white mb-2 mt-3 leading-tight hover:text-neon-pink transition-colors duration-200">
+                            【インナーケア】飲む白玉点滴!? グルタチオン＆リポソームビタミンCで内側から発光する肌へ
+                        </h4>
+                        <p class="text-[11px] text-slate-400 font-light leading-relaxed">
+                            サプリやドリンクで取り入れるインナービューティーの最前線。透明感ブースト。
+                        </p>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center text-[10px] text-slate-500 font-bold">
+                        <span>READ NOW</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-neon-pink"></span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-navy-950/80 z-20 relative">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center opacity-60">
+            <div class="text-xs font-bold tracking-widest uppercase mb-4 md:mb-0 bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-pink">
+                PREJUVENATION.JP
+            </div>
+            <div class="text-[10px] font-light text-slate-500">
+                &copy; 2026 PREJUVENATION | プレジュビネーション・トレンドメディア. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
